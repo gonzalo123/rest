@@ -33,4 +33,9 @@ class Cats implements \Rest\Iface
     {
         return array(1, 2, 3);
     }
+
+    public static function getAll(Request $request)
+    {
+        return array(1, 2);
+    }
 }

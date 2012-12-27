@@ -22,6 +22,8 @@ interface Iface
     public function update(Request $request);
 
     public function create(Request $request);
+
+    public static function getAll(Request $request);
 }
 ```
 
@@ -42,3 +44,4 @@ $app->getResponse()->send();
 
 The server will handle GET request to get(), DELETE to delete(), POST to update() and CREATE to create().
 
+If we perform a GET request without id (null) then the static getAll is raised

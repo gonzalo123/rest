@@ -22,6 +22,7 @@ class Decoder
     private $parameters;
 
     const ACTION_GET    = 'get';
+    const ACTION_GETALL = 'getAll';
     const ACTION_DELETE = 'delete';
     const ACTION_UPDATE = 'update';
     const ACTION_CREATE = 'create';

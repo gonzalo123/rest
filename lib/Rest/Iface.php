@@ -25,4 +25,6 @@ interface Iface
     public function update(Request $request);
 
     public function create(Request $request);
+
+    public static function getAll(Request $request);
 }

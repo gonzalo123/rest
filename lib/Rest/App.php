@@ -57,24 +57,29 @@ class App
 
     private function run()
     {
-        $object = $this->getNewInstance($this->decoder->getId(), $this->getClassFromModel());
-        $out    = array();
-        switch ($this->decoder->getAction()) {
-            case Decoder::ACTION_GET:
-                $out = $object->get();
-                break;
-            case Decoder::ACTION_DELETE:
-                $out = $object->delete();
-                break;
-            case Decoder::ACTION_UPDATE:
-                $out = $object->update($this->decoder->getRequest());
-                break;
-            case Decoder::ACTION_CREATE:
-                $out = $object->create($this->decoder->getRequest());
-                break;
-            default:
-                throw new Exception('Not a valid action', 404);
+        if (is_null($this->decoder->getId())) {
+            $out = call_user_func_array(array($this->getClassFromModel(), Decoder::ACTION_GETALL), array($this->decoder->getRequest()));
+        } else {
+            $object = $this->getNewInstance($this->decoder->getId(), $this->getClassFromModel());
+            $out    = array();
+            switch ($this->decoder->getAction()) {
+                case Decoder::ACTION_GET:
+                    $out = $object->get();
+                    break;
+                case Decoder::ACTION_DELETE:
+                    $out = $object->delete();
+                    break;
+                case Decoder::ACTION_UPDATE:
+                    $out = $object->update($this->decoder->getRequest());
+                    break;
+                case Decoder::ACTION_CREATE:
+                    $out = $object->create($this->decoder->getRequest());
+                    break;
+                default:
+                    throw new Exception('Not a valid action', 404);
+            }
         }
+
 
         return json_encode($out);
     }
@@ -83,8 +88,7 @@ class App
     {
         $model = $this->decoder->getModel();
         if (array_key_exists($model, $this->maps)) {
-            $class = $this->maps[$model];
-            return $class;
+            return $this->maps[$model];
         } else {
             throw new Exception('Not a valid model', 404);
         }
