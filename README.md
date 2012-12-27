@@ -1,5 +1,7 @@
 Simple REST crud server.
 
+[![Build Status](https://travis-ci.org/gonzalo123/rest.png?branch=master)](https://travis-ci.org/gonzalo123/rest)
+
 model objects will share the interface:
 
 ```php
