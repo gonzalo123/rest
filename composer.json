@@ -1,0 +1,20 @@
+{
+    "name":"gonzalo123/rest",
+    "authors":[
+        {
+            "name":"Gonzalo Ayuso",
+            "email":"gonzalo123@gmail.com"
+        }
+    ],
+
+    "autoload":{
+        "psr-0":{
+            "":"lib/",
+            "App":""
+        }
+    },
+
+    "require":{
+        "symfony/http-foundation":"dev-master"
+    }
+}
