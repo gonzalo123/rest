@@ -41,3 +41,4 @@ $app->getResponse()->send();
 ```
 
 The server will handle GET request to get(), DELETE to delete(), POST to update() and CREATE to create().
+
