@@ -1,11 +1,20 @@
 {
     "name":"gonzalo123/rest",
+    "description":"Simple REST crud server.",
+    "license":"MIT",
+    "keywords":["rest", "http", "crud"],
+    "type":"library",
+    "homepage":"https://github.com/gonzalo123/rest",
     "authors":[
         {
             "name":"Gonzalo Ayuso",
-            "email":"gonzalo123@gmail.com"
+            "email":"gonzalo123@gmail.com",
+            "homepage":"http://gonzalo123.com"
         }
     ],
+    "support":{
+        "issues":"https://github.com/gonzalo123/rest/issues"
+    },
 
     "autoload":{
         "psr-0":{
