@@ -21,7 +21,6 @@ interface Iface
 
     public function create(Request $request);
 }
-
 ```
 
 initialize the server mapping the model to the real class names:
@@ -38,3 +37,5 @@ $app->register('cats', '\App\Cats');
 
 $app->getResponse()->send();
 ```
+
+The server will handle GET request to get(), DELETE to delete(), POST to update() and CREATE to create()
